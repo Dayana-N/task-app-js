@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/styles/style.css">
+    <title>Task List</title>
+</head>
+
+<body>
+    <section class="main d-flex align-items-center justify-content-center">
+
+        <div class="container">
+
+            <div class="row justify-content-center">
+
+                <div class="col-12 col-md-10 col-lg-8 task-app">
+                    <!-- Alert -->
+                    <div class="row alert-row">
+                        <div class="col-12">
+                            <div id="alert-msg" class="alert alert-danger alert-dismissible fade text-center"
+                                role="alert">
+                                <strong>Holy guacamole!</strong> You should check in on the empty field below.
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                    aria-label="Close"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Logo -->
+                    <div class="row py-2">
+                        <div class="col-12 pt-4 text-center">
+
+                            <a href="index.html" class="text-decoration-none text-reset">
+                                <h2><i class="fa-solid fa-list-check fa-xl" style="color: #74C0FC;"></i> Task Manager
+                                </h2>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Input -->
+                    <div class="row justify-content-center py-2">
+                        <div class="col-8 text-center">
+                            <form>
+                                <div class="form-floating d-flex">
+                                    <input type="text" class="form-control mx-2" id="task-input"
+                                        placeholder="Enter Task">
+                                    <label for="task-input">Enter Task</label>
+                                    <button class="submit-btn btn px-3" id="submit-btn" type="submit">Add</button>
+
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="editModalLabel">Edit Task</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+
+                                    <div class="form-floating d-flex">
+                                        <input type="text" class="form-control mx-2" id="task-input-edit"
+                                            placeholder="Enter Task">
+                                        <label for="task-input">Edit Task</label>
+                                        <button class="submit-btn btn px-3" id="edit-btn" data-bs-dismiss="modal"
+                                            type="submit">Edit</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <hr>
+
+                    <!-- Task content -->
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 display-tasks">
+
+
+                                <ul id="task-list" class="list-group task-list">
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        <div class="task-item">
+                                            <input class="form-check-input me-1 task-checkbox" type="checkbox" id="1">
+                                            <label for="1">This is an item</label>
+                                        </div>
+
+                                        <span class="d-flex control-btns">
+                                            <button class="btn edit-btn" data-bs-toggle="modal"
+                                                data-bs-target="#editModal"><i class="fa-solid fa-pencil"
+                                                    style="color: #264c7f;"></i></button>
+                                            <button class="btn delete-btn"> <i class="fa-solid fa-trash-can"
+                                                    style="color: #264c7f;"></i></button></span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/f6549ef1f7.js" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+    <script src="./assets/scripts/script.js"></script>
+</body>
+
+</html>
