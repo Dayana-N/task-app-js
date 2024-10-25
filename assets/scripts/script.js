@@ -56,21 +56,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (currentEditIndex !== null) {
       taskListArr[currentEditIndex] = editInput.value;
       localStorage.setItem('listArray', JSON.stringify(taskListArr));
-      displayItems(); // Refresh the list with the updated task
-      currentEditIndex = null; // Reset the current edit index
+      displayItems();
+      currentEditIndex = null;
     }
   });
-
-  // function editItems(index) {
-  //     const modalEditBtn = document.getElementById('edit-btn');
-  //     const editInput = document.getElementById('task-input-edit');
-
-  //     modalEditBtn.addEventListener('click', (e) => {
-  //         taskListArr[index] = editInput.value;
-  //         localStorage.setItem('listArray', JSON.stringify(taskListArr));
-  //         displayItems();
-  //     });
-  // }
 
   function handleEditItems(index) {
     editInput.value = taskListArr[index];
