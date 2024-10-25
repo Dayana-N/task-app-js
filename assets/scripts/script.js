@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const inputField = document.getElementById('task-input');
   const addBtn = document.getElementById('submit-btn');
-  const errorMsg = document.getElementById('alert-msg');
   const taskList = document.getElementById('task-list');
   const modalEditBtn = document.getElementById('edit-btn');
   const editInput = document.getElementById('task-input-edit');
@@ -35,7 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
               <button class="btn edit-btn" data-id="${index}" data-bs-toggle="modal" data-bs-target="#editModal"><i class="fa-solid fa-pencil" style="color: #264c7f;"></i></button>
               <button class="btn delete-btn" data-id="${index}"> <i class="fa-solid fa-trash-can"
                       style="color: #264c7f;"></i></button></span>
-    
           `;
       taskList.appendChild(listItem);
     });
@@ -52,12 +50,13 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   modalEditBtn.addEventListener('click', (e) => {
-    // Update the task in the array based on currentEditIndex
-    if (currentEditIndex !== null) {
+    if (currentEditIndex !== null && checkInput(editInput.value)) {
       taskListArr[currentEditIndex] = editInput.value;
       localStorage.setItem('listArray', JSON.stringify(taskListArr));
       displayItems();
       currentEditIndex = null;
+    } else {
+      displayError();
     }
   });
 
@@ -75,14 +74,23 @@ document.addEventListener('DOMContentLoaded', () => {
   function createTask() {
     let taskValue = inputField.value;
     if (checkInput(taskValue)) {
-      taskListArr.push(taskValue);
+      taskListArr.unshift(taskValue);
       localStorage.setItem('listArray', JSON.stringify(taskListArr));
       displayItems();
-      console.log(taskListArr);
       inputField.value = '';
     } else {
-      errorMsg.classList.add('show');
+      displayError();
     }
+  }
+
+  function displayError() {
+    const alertContainer = document.getElementById('alert-container');
+    alertContainer.innerHTML = `
+       <div id="alert-msg" class="alert alert-danger alert-dismissible show fade text-center" role="alert">
+          <strong>Holy guacamole!</strong> You should check in on the empty field below.
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      `;
   }
 
   function checkInput(input) {

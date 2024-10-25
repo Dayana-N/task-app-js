@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="./assets/styles/style.css">
+    <link rel="stylesheet" href="style.css">
     <title>Task List</title>
 </head>
 
@@ -14,25 +14,17 @@
     <section class="main d-flex align-items-center justify-content-center">
 
         <div class="container">
-
             <div class="row justify-content-center">
-
                 <div class="col-12 col-md-10 col-lg-8 task-app">
                     <!-- Alert -->
                     <div class="row alert-row">
-                        <div class="col-12">
-                            <div id="alert-msg" class="alert alert-danger alert-dismissible fade text-center"
-                                role="alert">
-                                <strong>Holy guacamole!</strong> You should check in on the empty field below.
-                                <button type="button" class="btn-close" data-bs-dismiss="alert"
-                                    aria-label="Close"></button>
-                            </div>
+                        <div class="col-12" id="alert-container">
+
                         </div>
                     </div>
                     <!-- Logo -->
                     <div class="row py-2">
                         <div class="col-12 pt-4 text-center">
-
                             <a href="index.html" class="text-decoration-none text-reset">
                                 <h2><i class="fa-solid fa-list-check fa-xl" style="color: #74C0FC;"></i> Task Manager
                                 </h2>
@@ -48,7 +40,6 @@
                                         placeholder="Enter Task">
                                     <label for="task-input">Enter Task</label>
                                     <button class="submit-btn btn px-3" id="submit-btn" type="submit">Add</button>
-
                                 </div>
                             </form>
                         </div>
@@ -65,7 +56,6 @@
                                         aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-
                                     <div class="form-floating d-flex">
                                         <input type="text" class="form-control mx-2" id="task-input-edit"
                                             placeholder="Enter Task">
@@ -74,7 +64,6 @@
                                             type="submit">Edit</button>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -87,14 +76,12 @@
                         <div class="row">
                             <div class="col-12 display-tasks">
 
-
                                 <ul id="task-list" class="list-group task-list">
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
                                         <div class="task-item">
                                             <input class="form-check-input me-1 task-checkbox" type="checkbox" id="1">
                                             <label for="1">This is an item</label>
                                         </div>
-
                                         <span class="d-flex control-btns">
                                             <button class="btn edit-btn" data-bs-toggle="modal"
                                                 data-bs-target="#editModal"><i class="fa-solid fa-pencil"
@@ -121,7 +108,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
         crossorigin="anonymous"></script>
-    <script src="./assets/scripts/script.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
